@@ -21,7 +21,7 @@ const botonComprar = document.getElementById('finalizar-compra')
 // Primero, vamos a importar nuestros productos localmente al HTML, desde nuestro archivo .json:
 
 let dataJson = ""
-fetch("https://github.com/Marcusjb87/jsProject/data.json")
+fetch("/data.json")
     .then( (res) => res.json())
     .then( (data) => {
         dataJson = data
