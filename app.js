@@ -74,14 +74,6 @@ const eliminarDelCarrito = (prodId) => {
     const indice = carrito.indexOf(item)
     carrito.splice(indice, 1)
     actualizarCarrito()
-    const existe = carrito.some (prod => prod.id === prodId)
-    if (existe){
-        const prod = carrito.map (prod => {
-            if (prod.id === prodId){
-                prod.cantidad = 0
-            }
-        })
-    }
 }
 
 
