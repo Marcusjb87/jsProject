@@ -73,8 +73,15 @@ const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
     const indice = carrito.indexOf(item)
     carrito.splice(indice, 1)
-    item.cantidad = 0
     actualizarCarrito()
+    const existe = carrito.some (prod => prod.id === prodId)
+    if (existe){
+        const prod = carrito.map (prod => {
+            if (prod.id === prodId){
+                prod.cantidad = 0
+            }
+        })
+    }
 }
 
 
