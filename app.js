@@ -72,11 +72,8 @@ const agregarAlCarrito = (prodId) => {
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
     const indice = carrito.indexOf(item)
-    const prod = carrito.map (prod => {
-            if (prod.id === prodId){
-                prod.cantidad = 0
-            }
     carrito.splice(indice, 1)
+    item.cantidad = 0
     actualizarCarrito()
 }
 
